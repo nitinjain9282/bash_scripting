@@ -104,6 +104,72 @@ Examples: here.sh
 - 
 Examples: case_1.sh,compare.sh,ifthen.sh, exercise.sh
 -------------------------------------------------------------------------------------------------------------
+#Filter
+- a program is a filter if it reads from stdin and writes to stdout
+- filter can be used in pipes
+# head and tail commands 
+- head -5 , tail -200 etc. 
+- wc -l , wc -w etc. ==> word count for lines, words etc. 
+
+Examples: makeoutput.sh,
+
+#sed
+- works great as filter
+- its a stream editor which means its non interactive. 
+- -i option to change file
+- sed 's/old/new/' myfile ==> substitue the first occurence of old on each line for new in myfile and display result on stdout.
+
+# awk
+- pattern matchin language
+- it works as a filter.
+- good for report writing. 
+- processes a line at a time like sed
+- breaks each line into fields, $1, $2 etc.
+- $0 is entire line
+- fields are delimitted in values by variable FS, normally white space. 
+
+Examples: sed_1.sh,awk1
+
+# Script parameters and {}
+- parameters to shell program : $1, $2 .. are called positional parameters.
+- $0 is path to program itself. 
+- Shift is used to move positional arguments. 
+
+#indirection
+- x=abc
+  abc=def
+  echo ${!x} ===> prints def,this is called indirection. prints value of variable assigned to x.
+
+#unset or null variables
+- ${variable <OPR> value}
+x=${var:- Hotdog} ==> if var unset/null return value, otherwise return value of var. So if var is set it will be value assigned to var.
+:= ==> if var is unset/null var is assigned value and returned.
+:? ==> displays error and exit script if var unset/null.
+:+ ==> if var unset/null then return nothing, otherwise return value.
+${var:offset} ==> value of var starting at offset.
+${var:offset:len} ==> value of var starting at offset upto length len.
+${#var} ==> length of variable.
+
+Examples: unsetnull.sh,pos.sh, indirect.sh, string.sh,prepost.sh,challenge.pos.sh
+
+-------------------------------------------------------------------------------------------------------------
+#Advanced Bash:
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 

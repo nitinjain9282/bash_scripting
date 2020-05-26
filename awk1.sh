@@ -1,0 +1,4 @@
+#!/bin/awk -f
+{ szsum+=$9
+rssum+=$8}
+END {printf("RSS\tSZ\n%d\t%d\n",rssum,szsum)}
